@@ -1,0 +1,54 @@
+.container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 90vh;
+}
+
+.userContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 500px;
+    border: 1px solid black;
+    padding: 25px;
+    border-radius: 20px;
+    margin: 10px 0;
+    cursor: pointer;
+}
+
+.userContainer main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+}
+
+.userContainer main .subBox {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+}
+
+.userContainer main .subBox p {
+    margin: 0 5px;
+}
+
+.userContainer main .subBox a {
+    cursor: pointer;
+}
+
+.userContainer main h3 {
+    margin: 0;
+}
+
+.userContainer main h4 {
+    margin: 0;
+}
+
+.userContainer img {
+    border-radius: 300px;
+    width: 300px;
+}
