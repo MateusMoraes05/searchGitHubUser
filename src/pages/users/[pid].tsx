@@ -1,13 +1,15 @@
 import { useEffect, useState } from "react";
 
 import { GetStaticPaths, GetStaticProps } from "next";
+import Link from 'next/link'
 import Head from 'next/head'
 
 import axios from "axios";
 
-import styles from '../../../styles/profile.module.css'
+import styles from '../../../styles/modules/profile.module.css'
 
 export default function Handler({ content }) {
+
 
     const [userState, setUserState] = useState([])
 
@@ -16,20 +18,20 @@ export default function Handler({ content }) {
     }, [])
 
     return (
-        <div>
+        <div className={styles.container}>
             <Head>
                 <title>{content.login}</title>
             </Head>
             {
                 userState.map(user => {
                     return (
-                        <div key={user.id} className={styles.container}>
-                            <img src={`${user.avatar_url}`} alt="" />
+                        <div key={user.id} className={styles.userContainer}>
+                            <img src={`${user.avatar_url}`} alt={`${user.login}`} />
                             <main>
                                 <h3><b>{user.name}</b></h3>
                                 <h4>{user.login}</h4>
                                 <div className={styles.subBox}>
-                                    <p><b>{user.followers}</b> followers</p>
+                                    <a><Link href={`/friends/${user.login}`}><p><b>{user.followers}</b> followers</p></Link></a>
                                     <p><b>{user.following}</b> following</p>
                                 </div>
                             </main>
